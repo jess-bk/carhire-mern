@@ -1,0 +1,145 @@
+body {
+  background-image: url("");
+  background-size: cover;
+  background-image: linear-gradient(to right, #1b1818, #5f5f65);
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.card-details img {
+  max-width: 100%;
+}
+
+.card-details h1,
+.card-details p {
+  text-align: center;
+  color: gray;
+}
+
+.card-container-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 100px 0px;
+}
+
+.card-details {
+  width: 40%;
+  max-width: 600px;
+  max-height: 600px;
+  margin: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 10px #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card-details img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.card-details .card-content {
+  padding: 10px;
+}
+
+.card-details .card-title {
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.card-details .card-description {
+  font-size: 18px;
+  color: #444;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.card-img {
+  max-width: 600px;
+  max-height: 600px;
+  margin: 10px;
+  box-shadow: 2px 0px 10px 0px #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+  overflow-y: scroll;
+}
+
+.card-image-details-img {
+  overflow: hidden;
+  width: 600px;
+  height: 360px;
+  border-radius: 10px;
+  justify-content: space-between;
+  object-fit: cover;
+  margin: 5px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 0em;
+  background-color: #ccc;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+}
+
+.button_wrapper {
+  margin-top: 10px;
+}
+
+.button_bookcar {
+  /* button styles */
+  background-color: blue;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 6px 2px;
+  cursor: pointer;
+  border: 2px solid gray;
+
+  /* animation styles */
+  animation: color-animation 6s ease-in-out infinite;
+}
+
+@keyframes color-animation {
+  0% {
+    background-color: rgb(1, 1, 14);
+  }
+  25% {
+    background-color: gray;
+  }
+  50% {
+    background-color: rgb(0, 221, 255);
+  }
+  75% {
+    background-color: rgb(97, 249, 155);
+  }
+  100% {
+    background-color: rgb(1, 1, 14);
+  }
+}

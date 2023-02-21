@@ -1,0 +1,76 @@
+.navbar {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  background: repeating-radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px,
+      transparent 2px
+    ),
+    repeating-radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px,
+      transparent 2px
+    ),
+    linear-gradient(-45deg, #060206, #ccc, #060206);
+}
+
+.navbar__left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar_img {
+  height: 30px;
+}
+
+.navbar_title {
+  margin-right: 5px;
+}
+
+.navbar_center {
+  margin: 0 5px;
+}
+
+.navbar_right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar_right span {
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+  color: whitesmoke;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.navbar a {
+  margin: 0 5px;
+  text-decoration: none;
+  color: whitesmoke;
+  outline-color: gray;
+}
+
+.navbar_right button {
+  display: flex;
+  align-items: center;
+  justify-item: space-between;
+  background-color: #060206;
+  color: whitesmoke;
+  margin-right: 4px;
+  border-radius: 4px;
+}
+
+.navbar_right button:hover {
+  background-color: #0370a6;
+}

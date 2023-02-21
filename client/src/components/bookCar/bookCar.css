@@ -1,0 +1,236 @@
+/* Define the layout and style for the cards container */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Define the layout and style for the car image card */
+.card-car-image {
+  max-width: 600px;
+  max-height: 600px;
+  margin: 10px;
+  box-shadow: 2px 0px 10px 0px #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.book-form-card {
+  border-radius: 10px;
+  height: 500px;
+  width: 600px;
+  object-fit: cover;
+}
+
+/* Define the layout and style for the form card */
+.card-form {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.864);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 2px 0px 10px 0px #ccc;
+  text-align: center;
+  max-width: 600px;
+  height: 445px;
+}
+
+.card-form-booking-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-form-booking-wrapper > h1 {
+  font-weight: 600;
+  font-size: x-large;
+}
+
+.card-form-booking-wrapper > p {
+  font-size: 16px;
+}
+
+.user-details-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.user-details-form > span {
+  font-family: fantasy;
+  font-size: medium;
+}
+
+/* Define the layout and style for the form input fields */
+.form-input {
+  margin: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Define the style for the form submit button */
+.form-submit {
+  margin: 0.5rem;
+  padding: 0.75rem 1rem;
+  background-color: #4caf50;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Add hover effect to the submit button */
+.form-submit:hover {
+  cursor: pointer;
+  background-color: #3e8e41;
+}
+
+.form-link-login {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.date-range-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.date-range-display-label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.date-range-display-dates {
+  display: flex;
+  align-items: center;
+}
+
+.date-range-display-start-date {
+  color: #006cb7;
+}
+
+.date-range-display-end-date {
+  color: #006cb7;
+}
+
+.date-range-display-separator {
+  margin: 0 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.click-form-open {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid #b7b5b5;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  height: 30px;
+}
+button[type="submit"] {
+  width: 200px;
+  height: 40px;
+  background-color: #0079d3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+  background-color: #006cb7;
+}
+
+.date-range-calendar {
+}
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+.close-modal-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #0079d3;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  color: black;
+  font-size: smaller;
+  font-weight: bold;
+}
+
+.book-car {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.notification {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: red;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+  background-color: white;
+  color: red;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 10px;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close:hover {
+  background-color: red;
+  color: white;
+}
