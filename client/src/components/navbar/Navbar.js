@@ -25,14 +25,14 @@ const Navbar = () => {
   }, [user]);
 
   // Handle form submission
-  const handleLogout = (e) => {
+  const handleLogout = () => {
     try {
-      e.preventDefault();
+      // e.preventDefault();
       dispatch(logout());
-      localStorage.clear("user");
+      localStorage.clear("user", "user.tokens");
       navigate("/");
     } catch (error) {
-      dispatch(error);
+      console.log(error);
     }
   };
 

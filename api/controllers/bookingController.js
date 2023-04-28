@@ -57,7 +57,7 @@ const bookCarAPI = async (req, res) => {
         .json({ error: "Car is already booked", existingBooking });
     }
 
-    const totalDays = moment(endDate).diff(moment(startDate), "days") + 1;
+    const totalDays = moment(endDate).diff(moment(startDate), "days");
     const totalAmount = totalDays * car.pricePerDay;
 
     const booking = new Booking({

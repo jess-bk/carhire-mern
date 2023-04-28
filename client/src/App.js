@@ -5,6 +5,7 @@ import CarId from "./pages/carId/CarId";
 import CarsList from "./pages/cars/Cars";
 import Home from "./pages/home/Home";
 import BookCars from "./pages/bookCar/BookCar";
+import BookCarPreview from "./components/bookCar/bookCarPreview/BookCarPreview";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/cars" element={<CarsList />} />
         <Route path="/car/:id" element={<CarId />} />
         <Route path="/book-car/:id" element={<BookCars />} />
+        <Route path="/book-preview/:id" element={<BookCarPreview />} />
       </Routes>
     </BrowserRouter>
   );

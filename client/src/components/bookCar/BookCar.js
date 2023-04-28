@@ -34,13 +34,13 @@ const BookCar = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const car = useSelector((state) => state.car.car);
+  console.log("car", car);
   const bookings = useSelector((state) => state.car.bookings);
 
   useEffect(() => {
     if (car && bookings) {
       dispatch(getCarById(id));
       dispatch(getBookings());
-      console.log("get car id", id);
     }
   }, [dispatch, id]);
 
@@ -49,6 +49,40 @@ const BookCar = () => {
   const toggleModal = () => {
     setOpenDate(false);
   };
+
+  const calculateTotalBookedDays = (startDate, endDate) => {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    const difference = end.getTime() - start.getTime();
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+
+    return days;
+  };
+  const totalDays = calculateTotalBookedDays(startDate, endDate);
+
+  const calculateTotalPrice = (numberOfDays, pricePerDay) => {
+    const totalPrice = numberOfDays * pricePerDay;
+    const roundedTotalPrice = Math.ceil(totalPrice);
+
+    return roundedTotalPrice;
+  };
+  const totalAmount = calculateTotalPrice(totalDays, car.pricePerDay);
+
+  function getDateArray(startDate, endDate) {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    const length = (end - start) / (1000 * 60 * 60 * 24) + 1;
+    return Array.from({ length }, (_, i) => {
+      const date = new Date(start);
+      date.setDate(start.getDate() + i);
+      return date;
+    });
+  }
+
+  // Map bookings array to an array of disabled dates
+  const disabledDates = bookings.bookings?.flatMap((booking) =>
+    getDateArray(booking.startDate, booking.endDate)
+  );
 
   const handleSelect = (ranges) => {
     console.log("handleSelect called", ranges.selection);
@@ -69,7 +103,9 @@ const BookCar = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     try {
-      dispatch(createBooking(id, startDate, endDate, user));
+      dispatch(
+        createBooking(id, startDate, endDate, user, totalAmount, totalDays)
+      );
     } catch (error) {
       console.log("error", error);
     }
@@ -89,6 +125,8 @@ const BookCar = () => {
             <p>Model: {car.model}</p>
             <p>Year: {car.year}</p>
             <p>Rent per day: £{car.pricePerDay}</p>
+            <p>Total Days of Booking: {totalDays}</p>
+            <p>Total Price: £{totalAmount}</p>
           </div>
           <br />
           {isAuthenticated && user ? (
@@ -134,6 +172,9 @@ const BookCar = () => {
                             moveRangeOnFirstSelection={false}
                             ranges={[dateRange]}
                             minDate={new Date()}
+                            disabledDates={disabledDates}
+                            preview={true}
+                            showPreview={true}
                           />
                           <button
                             className="close-modal-button"
